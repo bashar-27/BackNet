@@ -8,6 +8,7 @@ const pg = require('pg');
 server.use(cors());
 server.use(express.json());
 const axios =require('axios');
+const { test } = require('node:test');
 //'postgresql://localhost:5432/lab135'
 const client = new pg.Client(process.env.DATABASE_URL);
 
@@ -31,6 +32,12 @@ server.get('/getMovies',getMovieHandler);
 server.put('/udateMoveiFavorite/:id',udateMoveiFavorite);
 
 server.delete('/deleteFromFav/:id',deleteMovie);
+
+server.get('/',testt);
+
+function testt(req,res){
+    res.send("WELOCME ");
+}
 
 function getTrending(req,res){
     const url = `https://api.themoviedb.org/3/trending/movie/day?api_key=${apiKey}`
