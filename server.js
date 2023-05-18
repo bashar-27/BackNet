@@ -8,7 +8,7 @@ const pg = require('pg');
 server.use(cors());
 server.use(express.json());
 const axios =require('axios');
-const { test } = require('node:test');
+
 //'postgresql://localhost:5432/lab135'
 const client = new pg.Client(process.env.DATABASE_URL);
 
